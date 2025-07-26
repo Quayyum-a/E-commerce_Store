@@ -9,15 +9,25 @@ const Highlights = () => {
         <Link to="/">Home</Link>
       </div>
 
+      <div className="hover:bg-stone-100 py-3 px-5 rounded-full cursor-pointer underline transition-all duration-300">
+        <Link to="/shop">Shop</Link>
+      </div>
+
       <div className="group relative flex items-center gap-1 hover:bg-stone-100 p-3 rounded-full cursor-pointer hover:underline">
         <span>Collections</span>
         <IoChevronDownOutline className="text-stone-900 text-xl" />
 
         <div className="absolute top-full left-0 mt-2 w-40 bg-white border rounded-lg shadow-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-20">
           <ul className="py-2">
-            <li className="px-4 rounded-full py-2 hover:bg-blue-50 cursor-pointer">Men's Essentials</li>
-            <li className="px-4 rounded-full py-2 hover:bg-blue-50 cursor-pointer">Women's Signature</li>
-            <li className="px-4 rounded-full py-2 hover:bg-blue-50 cursor-pointer">Premium Accessories</li>
+            <li className="px-4 rounded-full py-2 hover:bg-blue-50 cursor-pointer">
+              <Link to="/shop?category=mens-shirts">Men's Essentials</Link>
+            </li>
+            <li className="px-4 rounded-full py-2 hover:bg-blue-50 cursor-pointer">
+              <Link to="/shop?category=womens-dresses">Women's Signature</Link>
+            </li>
+            <li className="px-4 rounded-full py-2 hover:bg-blue-50 cursor-pointer">
+              <Link to="/shop?category=laptops">Premium Electronics</Link>
+            </li>
           </ul>
         </div>
       </div>
