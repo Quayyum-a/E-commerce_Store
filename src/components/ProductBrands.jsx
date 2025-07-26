@@ -10,15 +10,15 @@ const brandLogos = [
 
 const ProductBrands = () => {
   return (
-    <div className="w-full bg-black py-6">
+    <div className="w-full bg-black py-4">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-12">
+        <div className="flex justify-center items-center gap-4 sm:gap-6 md:gap-8">
           {brandLogos.map((logo, index) => (
             <img
               key={index}
               src={`${logo}`}
               alt="Brand Logo"
-              className="h-12 sm:h-16 object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
+              className="h-6 sm:h-8 md:h-10 object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
             />
           ))}
         </div>
