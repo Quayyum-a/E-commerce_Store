@@ -8,6 +8,7 @@ import AppLayout from "../pages/layout/AppLayout";
 import Home from "../pages/Home"
 import Shop from "../pages/Shop"
 import Wishlist from "../pages/Wishlist"
+import Profile from "../pages/Profile"
 
 const router = createBrowserRouter([
   {
