@@ -102,8 +102,8 @@ const CustomerTestimonials = () => {
           <HiOutlineChevronLeft className="text-xl" />
         </button>
 
-        <h2 className="text-2xl sm:text-4xl font-bold underline text-center">
-          OUR HAPPY CUSTOMERS
+        <h2 className="text-2xl sm:text-4xl font-bold text-center bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+          ✨ OUR HAPPY CUSTOMERS ✨
         </h2>
 
         <button
@@ -123,15 +123,30 @@ const CustomerTestimonials = () => {
         {visibleTestimonials.map((testimonial, index) => (
           <div
             key={index}
-            className="bg-white p-6 rounded-lg relative overflow-hidden group shadow-lg hover:shadow-xl transform transition-transform duration-500 hover:scale-105"
+            className="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl relative overflow-hidden group shadow-md hover:shadow-2xl transform transition-all duration-300 hover:-translate-y-2 border border-blue-200"
           >
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
 
-            <div className="absolute inset-0 bg-gradient-to-b from-red-600 to-red-900 opacity-0 group-hover:opacity-100 transition-all duration-500 z-0"></div>
+            <div className="absolute -top-2 -right-2 w-16 h-16 bg-gradient-to-br from-yellow-300 to-orange-400 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
 
-            <div className="relative z-10 flex flex-col items-center text-black group-hover:text-white transition-colors duration-500">
-              <p className="text-xl">{testimonial.star}</p>
-              <h3 className="font-semibold text-lg mb-2">{testimonial.name}</h3>
-              <p className="text-sm italic">"{testimonial.message}"</p>
+            <div className="relative z-10">
+              <div className="flex items-center justify-between mb-4">
+                <div className="text-2xl">{testimonial.star}</div>
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                  {testimonial.name.charAt(0)}
+                </div>
+              </div>
+
+              <p className="text-gray-700 mb-4 leading-relaxed">
+                "{testimonial.message}"
+              </p>
+
+              <div className="flex items-center space-x-3">
+                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                  <span className="text-white text-sm">✓</span>
+                </div>
+                <h3 className="font-bold text-gray-800 text-sm">{testimonial.name}</h3>
+              </div>
             </div>
           </div>
         ))}
