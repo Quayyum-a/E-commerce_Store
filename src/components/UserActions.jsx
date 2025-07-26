@@ -47,12 +47,15 @@ const UserActions = () => {
       {currentUser?.loggedIn ? (
         <>
        
-          <div className="flex items-center gap-2 hover:bg-stone-100 p-2 rounded-full cursor-pointer">
+          <Link
+            to="/profile"
+            className="flex items-center gap-2 hover:bg-stone-100 p-2 rounded-full cursor-pointer transition-colors"
+          >
             <HiOutlineUser className="text-stone-900 text-2xl" />
             <span className="text-sm font-medium">
-              {currentUser.phone || "User"}
+              {currentUser.firstName || currentUser.phone || "User"}
             </span>
-          </div>
+          </Link>
 
           <button
             onClick={handleLogout}
