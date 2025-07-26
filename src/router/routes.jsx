@@ -9,6 +9,7 @@ import Home from "../pages/Home"
 import Shop from "../pages/Shop"
 import Wishlist from "../pages/Wishlist"
 import Profile from "../pages/Profile"
+import Checkout from "../pages/Checkout"
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "profile",
         element: <Profile />,
+      },
+      {
+        path: "checkout",
+        element: <Checkout />,
       },
       {
         path: "productdetails/:id",
