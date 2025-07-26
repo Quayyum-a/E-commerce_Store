@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const CartSummary = () => {
  const cartItems = useSelector((state) => state.cart.cartItems || []);
@@ -31,9 +32,12 @@ const CartSummary = () => {
             />
             <button className="bg-black text-white py-2 px-4 ml-8 rounded-full">Apply</button>
         </form>
-        <button className="w-full bg-black text-white py-2 rounded-full hover:opacity-90 transition">
-            Go to Checkout
-        </button>
+        <Link
+          to="/checkout"
+          className="block w-full bg-black text-white py-2 rounded-full hover:opacity-90 transition text-center"
+        >
+          Go to Checkout
+        </Link>
         </div>
     </div>
   )
