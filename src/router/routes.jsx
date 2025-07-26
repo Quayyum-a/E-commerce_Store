@@ -7,6 +7,7 @@ import ProductDetails from "../pages/ProductDetails";
 import AppLayout from "../pages/layout/AppLayout";
 import Home from "../pages/Home"
 import Shop from "../pages/Shop"
+import Wishlist from "../pages/Wishlist"
 
 const router = createBrowserRouter([
   {
