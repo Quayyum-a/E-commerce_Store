@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 const brandLogos = [
   "versace.png",
   "gucci.png",
@@ -12,25 +10,19 @@ const brandLogos = [
 
 const ProductBrands = () => {
   return (
-    <div className="w-full bg-black overflow-hidden py-3">
-      <motion.div
-        className="flex gap-12 items-center "
-        animate={{ x: ["0%", "-100%"] }}
-        transition={{
-          repeat: Infinity,
-          duration: 25,
-          ease: "linear",
-        }}
-      >
-        {[...brandLogos, ...brandLogos].map((logo, index) => (
-          <img
-            key={index}
-            src={`${logo}`}
-            alt="Brand Logo"
-            className="h-12 sm:h-16 object-contain"
-          />
-        ))}
-      </motion.div>
+    <div className="w-full bg-black py-4">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex justify-center items-center gap-4 sm:gap-6 md:gap-8">
+          {brandLogos.map((logo, index) => (
+            <img
+              key={index}
+              src={`${logo}`}
+              alt="Brand Logo"
+              className="h-6 sm:h-8 md:h-10 object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

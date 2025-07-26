@@ -22,10 +22,10 @@ const AppLayoutLoader = () => {
         }}
       >
         <div className="font-extrabold tracking-tight">
-          <span className="text-white">N</span>
-          <span className="text-amber-400">I</span>
-          <span className="text-white">K</span>
-          <span className="text-stone-300">O</span>
+          <span className="text-white">S</span>
+          <span className="text-amber-400">H</span>
+          <span className="text-white">O</span>
+          <span className="text-stone-300">P</span>
           <span className="text-white">.</span>
           <span className="text-stone-400">CO</span>
         </div>

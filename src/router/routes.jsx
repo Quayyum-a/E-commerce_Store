@@ -6,6 +6,10 @@ import CartPage from "../pages/CartPage";
 import ProductDetails from "../pages/ProductDetails";
 import AppLayout from "../pages/layout/AppLayout";
 import Home from "../pages/Home"
+import Shop from "../pages/Shop"
+import Wishlist from "../pages/Wishlist"
+import Profile from "../pages/Profile"
+import Checkout from "../pages/Checkout"
 
 const router = createBrowserRouter([
   {
@@ -25,8 +29,24 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "cartpage", 
+        path: "cartpage",
         element: <CartPage />,
+      },
+      {
+        path: "shop",
+        element: <Shop />,
+      },
+      {
+        path: "wishlist",
+        element: <Wishlist />,
+      },
+      {
+        path: "profile",
+        element: <Profile />,
+      },
+      {
+        path: "checkout",
+        element: <Checkout />,
       },
       {
         path: "productdetails/:id",

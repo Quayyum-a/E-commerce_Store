@@ -1,9 +1,13 @@
 import { Link, useNavigate } from "react-router-dom";
 import { HiOutlineUser, HiOutlineShoppingCart } from "react-icons/hi";
+import { FiHeart } from "react-icons/fi";
+import { useSelector } from "react-redux";
 
 const UserActions = () => {
   const navigate = useNavigate();
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  const wishlistItems = useSelector((state) => state.wishlist.wishlistItems);
+  const cartItems = useSelector((state) => state.cart.cartItems);
 
   const handleLogout = () => {
     localStorage.removeItem("currentUser");
@@ -12,24 +16,46 @@ const UserActions = () => {
 
   return (
     <div className="flex items-center gap-4 text-sm">
-     
+      {/* Wishlist */}
+      <Link
+        to="/wishlist"
+        className="relative flex items-center hover:text-red-500 transition-colors"
+        aria-label="View wishlist"
+      >
+        <FiHeart className="text-stone-800 text-2xl" />
+        {wishlistItems.length > 0 && (
+          <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+            {wishlistItems.length}
+          </span>
+        )}
+      </Link>
+
+      {/* Cart */}
       <Link
         to="/cartpage"
-        className="relative flex items-center hover:text-orange-500"
+        className="relative flex items-center hover:text-orange-500 transition-colors"
         aria-label="View cart"
       >
         <HiOutlineShoppingCart className="text-stone-800 text-3xl" />
+        {cartItems.length > 0 && (
+          <span className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+            {cartItems.length}
+          </span>
+        )}
       </Link>
 
       {currentUser?.loggedIn ? (
         <>
        
-          <div className="flex items-center gap-2 hover:bg-stone-100 p-2 rounded-full cursor-pointer">
+          <Link
+            to="/profile"
+            className="flex items-center gap-2 hover:bg-stone-100 p-2 rounded-full cursor-pointer transition-colors"
+          >
             <HiOutlineUser className="text-stone-900 text-2xl" />
             <span className="text-sm font-medium">
-              {currentUser.phone || "User"}
+              {currentUser.firstName || currentUser.phone || "User"}
             </span>
-          </div>
+          </Link>
 
           <button
             onClick={handleLogout}
