@@ -23,7 +23,7 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              FIND CLOTHES THAT MATCH YOUR STYLE
+              DISCOVER YOUR SIGNATURE STYLE
             </motion.h1>
 
             <motion.p
@@ -32,8 +32,8 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: "easeOut" }}
             >
-              Browse through our diverse range of meticulously crafted garments,
-              designed to bring out your individuality and cater to your sense of style.
+              Explore our curated collection of premium fashion pieces,
+              carefully selected to express your unique personality and elevate your wardrobe.
             </motion.p>
 
             <motion.div
@@ -44,9 +44,9 @@ const HeroSection = () => {
             >
               <Link to="/login">
                 <button
-                  className="bg-stone-900 text-white px-8 py-3 sm:px-10 sm:py-3 rounded-full font-semibold text-sm sm:text-base transition duration-300 ease-in-out hover:bg-stone-800 hover:scale-105 hover:shadow-lg"
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 sm:px-10 sm:py-3 rounded-full font-semibold text-sm sm:text-base transition duration-300 ease-in-out hover:from-blue-700 hover:to-purple-700 hover:scale-105 hover:shadow-lg"
                 >
-                  Shop Now
+                  Explore Collection
                 </button>
               </Link>
             </motion.div>

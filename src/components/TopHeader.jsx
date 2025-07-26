@@ -8,9 +8,9 @@ const TopHeader = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="bg-stone-900 px-4 py-2 flex items-center justify-center relative text-center">
+    <div className="bg-gradient-to-r from-blue-600 to-purple-600 px-4 py-2 flex items-center justify-center relative text-center">
       <p className="text-white text-sm sm:text-base leading-snug max-w-[90%] sm:max-w-full">
-        Sign up and get 20% off your first order.
+        Join our exclusive style community and unlock 25% off your debut purchase.
         <Link className="underline ml-1 sm:ml-2" to="/signup">
           Sign Up Now
         </Link>

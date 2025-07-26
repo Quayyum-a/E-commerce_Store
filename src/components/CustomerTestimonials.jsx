@@ -4,39 +4,57 @@ import { HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi";
 const testimonials = [
   {
     star: "⭐⭐⭐⭐⭐",
-    name: "Nicholas A. ✅",
+    name: "Adebayo K. ✅",
     message:
       "Finding clothes that align with my personal style used to be a challenge until I discovered Shop.co. The range of options they offer is truly remarkable.",
   },
   {
     star: "⭐⭐⭐⭐",
-    name: "Micheal I. ✅",
+    name: "Funmilayo A. ✅",
     message:
       "Shop.co has changed the way I shop! Their curated selections and quality are unbeatable.",
   },
   {
-    star: "⭐⭐⭐",
-    name: "Apostle J. ✅",
+    star: "⭐⭐⭐⭐⭐",
+    name: "Olumide J. ✅",
     message:
       "I was amazed by the fast delivery and how the clothes fit perfectly. Highly recommended!",
   },
   {
-    star: "⭐⭐",
-    name: "Moses I. ✅.",
+    star: "⭐⭐⭐⭐",
+    name: "Kemi T. ✅",
     message:
       "A shopping experience like no other. From browsing to checkout, everything felt smooth.",
   },
   {
     star: "⭐⭐⭐⭐⭐",
-    name: "Chinedu U. ✅",
+    name: "Emeka U. ✅",
     message:
       "What I love most is their attention to detail and how they keep trends in mind. Love Shop.co!",
   },
   {
     star: "⭐⭐⭐⭐",
-    name: "Majek O. ✅",
+    name: "Blessing O. ✅",
     message:
       "Excellent customer service and top-notch products. I'll definitely be coming back!",
+  },
+  {
+    star: "⭐⭐⭐⭐⭐",
+    name: "Chioma N. ✅",
+    message:
+      "The quality of clothes exceeded my expectations. Every piece I've ordered has been perfect for my style!",
+  },
+  {
+    star: "⭐⭐⭐⭐",
+    name: "Tunde S. ✅",
+    message:
+      "Fast shipping to Lagos and amazing customer support. Shop.co truly understands fashion!",
+  },
+  {
+    star: "⭐⭐⭐⭐⭐",
+    name: "Amara I. ✅",
+    message:
+      "I love how trendy and affordable their collections are. Perfect for the modern Nigerian woman!",
   },
 ];
 

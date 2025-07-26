@@ -4,7 +4,7 @@ const FooterSocials = () => {
   return (
     <div className="w-full flex flex-col md:flex-row justify-between items-center gap-4 mt-6 px-4">
       <p className="text-sm text-center md:text-left">
-        Kodak.co © 2000-2025, All Rights Reserved
+        Shop.co © 2000-2025, All Rights Reserved
       </p>
 
       <div className="flex gap-2 flex-wrap justify-center md:justify-end cursor-pointer">
