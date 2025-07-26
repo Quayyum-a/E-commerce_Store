@@ -1,11 +1,14 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../api/cartSlice";
+import { addToWishlist, removeFromWishlist } from "../api/wishlistSlice";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { FiHeart, FiShoppingCart } from "react-icons/fi";
 
 const ProductCard = ({ product, viewMode = 'grid' }) => {
   const dispatch = useDispatch();
+  const wishlistItems = useSelector((state) => state.wishlist.wishlistItems);
+  const isInWishlist = wishlistItems.some(item => item.id === product.id);
 
   const renderStars = (rating) => {
     const stars = Math.round(rating);
@@ -15,6 +18,16 @@ const ProductCard = ({ product, viewMode = 'grid' }) => {
   const handleAddToCart = () => {
     dispatch(addToCart(product));
     toast.success(`${product.title} added to cart!`);
+  };
+
+  const handleWishlistToggle = () => {
+    if (isInWishlist) {
+      dispatch(removeFromWishlist(product.id));
+      toast.success('Removed from wishlist');
+    } else {
+      dispatch(addToWishlist(product));
+      toast.success('Added to wishlist!');
+    }
   };
 
   if (viewMode === 'list') {
@@ -57,8 +70,15 @@ const ProductCard = ({ product, viewMode = 'grid' }) => {
             </div>
 
             <div className="flex items-center gap-2">
-              <button className="p-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-                <FiHeart className="w-5 h-5" />
+              <button
+                onClick={handleWishlistToggle}
+                className={`p-2 border rounded-lg transition-colors ${
+                  isInWishlist
+                    ? 'border-red-300 bg-red-50 text-red-500'
+                    : 'border-gray-300 hover:bg-gray-50'
+                }`}
+              >
+                <FiHeart className={`w-5 h-5 ${isInWishlist ? 'fill-current' : ''}`} />
               </button>
               <button
                 onClick={handleAddToCart}
@@ -78,8 +98,15 @@ const ProductCard = ({ product, viewMode = 'grid' }) => {
   return (
     <div className="flex flex-col border rounded-xl p-4 shadow-sm hover:shadow-md transition bg-white max-w-sm w-full mx-auto relative group">
       {/* Wishlist Button */}
-      <button className="absolute top-2 right-2 z-10 p-2 bg-white rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-red-50">
-        <FiHeart className="w-4 h-4 text-gray-600 hover:text-red-500" />
+      <button
+        onClick={handleWishlistToggle}
+        className={`absolute top-2 right-2 z-10 p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-all duration-300 ${
+          isInWishlist
+            ? 'bg-red-500 text-white opacity-100'
+            : 'bg-white text-gray-600 hover:bg-red-50 hover:text-red-500'
+        }`}
+      >
+        <FiHeart className={`w-4 h-4 ${isInWishlist ? 'fill-current' : ''}`} />
       </button>
 
       <div className="w-full h-60 sm:h-56 md:h-64 overflow-hidden rounded-lg group">
